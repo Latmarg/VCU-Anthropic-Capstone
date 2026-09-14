@@ -14,6 +14,35 @@ Author = Ruth Appel and Peter McCrory and Alex Tamkin and Michael Stern and Mile
 
 
 
+How was data collected? The data was provided by Anthropic from two sources, real-world conversations on Claude.ai after using a privacy-preserving system called Clio on them and transcripts from 1P API customers. They also provided geographic data, but only with the Claude conversations.
+
+
+
+Unit of observation: Anthropic has provided observations including:
+
+1. 1P API usage from 8/4/2025 - 8/11/2025, excluding geographic information, a row = an API usage record
+2. Claude AI usage from 8/4/2025 - 8/11/2025, including geographic information, a row = a Claude usage record
+3. The GDP of countries for 2024, a row = One country and their GDP
+4. The GDP of US states for 2024, a row = One UIS state and their GDP
+5. ISO Country codes, a row = One country and their ISO country code
+6. ONET Task statements, a row = one O\*NET task statement
+7. SOC occupation codes, a row = one SOC occupation code
+8. Working age populations for countries in 2024, a row = one country and their working-age population
+9. Working age populations for US states in 2024, a row = one US state and their working-age population
+
+
+
+How any labels were produced: The labels of Augmentation vs Automation is determined by how Claude is utilized by the user. If they give Claude the task to do itself, then it is Automation. If they collaborate upon a task, then it is Augmentation.
+
+
+
+2-3 headline numbers: 
+
+1. The US has the highest total usage of Claude at 21.6%
+2. Singapore and Canada have some of the highest usage per capita at 4.6x and 2.9x the expected value based upon population
+
+
+
 
 
 
