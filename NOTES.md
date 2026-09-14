@@ -36,7 +36,7 @@ How any labels were produced: The labels of Augmentation vs Automation is determ
 
 
 
-2-3 headline numbers: 
+2-3 headline numbers:
 
 1. The US has the highest total usage of Claude at 21.6%
 2. Singapore and Canada have some of the highest usage per capita at 4.6x and 2.9x the expected value based upon population
@@ -44,6 +44,12 @@ How any labels were produced: The labels of Augmentation vs Automation is determ
 
 
 
+
+Findings:
+
+Value of US comes to be 21.5% which is similar to the stated 21.6 in the article
+
+Singapore is number 3 with a similar value of 4.57 to the 4.6, but Canada is not even in the top 10 meaning its not in the highest usage per capita.
 
 
 
