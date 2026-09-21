@@ -47,20 +47,11 @@ How any labels were produced: The labels of Augmentation vs Automation is determ
 
 Findings:
 
-
-
 | Claim (from task 3) | Actual (from data) | Match? |
-
 |---|---|---|
-
-| US highest usage, \~21.6% | US highest at 21.5% | Yes (rounding) |
-
-| Singapore \~4.6x per capita | 4.57, but ranks 3rd | Partial |
-
-| Canada \~2.9x per capita, among highest | Not in top 10 | No |
-
-| (new finding) | Israel 7.0 and Monaco 4.9 are the true per-capita leaders | — |
-
+| US highest usage, ~21.6% | US highest at 21.5% | Yes |
+| Singapore ~4.6x per capita | 4.57, but ranks 3rd | Yes |
+| Canada ~2.9x per capita, among highest | Not in top 10 | No |
 
 
 Value of US comes to be 21.5% which is similar to the stated 21.6 in the article.
