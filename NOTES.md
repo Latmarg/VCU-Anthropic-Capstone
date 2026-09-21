@@ -47,6 +47,8 @@ How any labels were produced: The labels of Augmentation vs Automation is determ
 
 Findings:
 
+
+
 | Claim (from task 3) | Actual (from data) | Match? |
 
 |---|---|---|
