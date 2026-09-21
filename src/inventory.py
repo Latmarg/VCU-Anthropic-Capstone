@@ -30,3 +30,5 @@ print(percap)
 
 percap_sorted = percap.sort_values("value", ascending= False)
 print(percap_sorted.head(10))
+
+#Singapore is number 3 with a similar value of 4.57 to the 4.6, but Canada is not even in the top 10. 
