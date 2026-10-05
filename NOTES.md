@@ -1,5 +1,5 @@
 Question:  What explains geographic differences in AI adoption? 
-My intent is to find reasons as to why there are differences in adoption of Claude AI between countries. I will be doing this by utilizing datasets from ___ to look at ___.
+My intent is to find reasons as to why there are differences in adoption of Claude AI between countries. I will be doing this by utilizing datasets from ILOSTAT to look at average monthly earnings of employees by their sex, occupation, and currency. I also will use a dataset from the ITU that presents Individuals using the internet internationally.
 
 Source URL: https://huggingface.co/datasets/Anthropic/EconomicIndex
 
@@ -71,14 +71,48 @@ Raw Examples: Inspected the data using Excel. Specifically looking at Augmentati
 6. Not Classified - There is a large number of usage the falls under the geo_name "not_classified" meaning that they were not assigned a country. This only has usage count and usage percent, with a usage count of 150,999 and percent of 15.66. This is something odd to keep in mind, as it affects the percentages of usage count and usage percent.
 
 
-URL: https://data.worldbank.org/indicator/IT.NET.USER.ZS
-Download date: (today, 10/4/2026)
+Source URL: https://data.worldbank.org/indicator/IT.NET.USER.ZS
+
+Release: IT.NET.USER.ZS
+
+Download Date: 10/4/2026
+
+Citation: 
+
+Author = International Telecommunication Union (ITU), title = Individuals using the Internet, date = 2026-07-13,   year = 2026, url = https://datahub.itu.int/data/?i=11624
+
 License: CC BY 4.0
-Original source: ITU https://datahub.itu.int/
-Year used: 2024
+
 
 The next step taken was finding datasets to utilize alongside the anthropic data to identify reasons that Claude AI might differentiate between countries. The first dataset I am integrating is from World Bank Group Individuals using the Internet (% of population). It contains the ISO country codes that are also included in the data from Anthropic, so finding overlapping countries and combining them was not difficult. I then had to determine the appropriate year to use. 2025 contained the most recent data but only had entries for 42 of them. Moving back to 2024, there were 214 entries so I chose that instead to prioritize the amount of data over its recency. 
 
 1. 193 countries were found that matched between the Anthropic and World Bank datasets. 
 2. Out of the 193 countries, 166 of them have usable data. The other 27 matched but were missing values for 2024.
 3. The countries that were dropped are mostly smaller countries, islands, and microstates. Their absence should not affect the dataset too much, especially since there were some with no data from anthropic as well.
+
+
+Source: International Labour Organization (ILO), ILOSTAT
+
+Access URL: https://ilostat.ilo.org/data/
+
+Indicator: Average monthly earnings of employees by sex, occupation and currency
+
+Indicator Code: EAR_EMTA_SEX_OCU_CUR_NB_A
+
+Download Date: 10/5/2026
+
+Citation: 
+
+Author = 
+
+International Labour Organization. (ILO), title = Average monthly earnings of employees by sex, occupation and currency,   year = 2026, url = https://ilostat.ilo.org/data/?cat_mode=subject
+
+License: CC BY 4.0
+
+This dataset had a lot of extra columns, so filters were needed before proceeding. I wanted to isolate the high-skill and low-skill earnings to create a wage dispersion. The first filter applied was for sex using Total, excluding Male and Female. The second filter was used with the intent of keeping the currency in USD. This dataset came with both local and international currencies used for each country, so I decided to use only one currency. To determine the high-skill and low-skill incomes, the skill levels were separated into two, one containing skill levels 3-4 and the other containing skill level 1. The dispersion used consists of dividing the high-skill earnings by the low-skill. 
+
+1. There were 26 countries that did not initially match during the merging, so the names were fixed and then merging was reattempted. After that, there were only 11 countries that did not have matches. Some large countries were almost excluded due to the naming differences, such as the United States of America, The Netherlands, and the United Kingdom.
+2. The 11 countries left were Afghanistan, Democratic Republic of the Congo, Ethiopia, Hong Kong, Macau, Mali, Myanmar, Nicaragua, Russian Federation, Sudan, and Yemen, which are not contained within Anthropic's dataset. Without Anthropic data, there is no source data to be used for them and would not be considered anyway.
+3. Different countries used different years as not all of them had fully up to date data for 2024 or 2025, the estimated range is 2009 to 2025.
+4. When combining the datasets, there were initially 193 between Anthropic and World Bank, with 166 of them having usable data. When combined with this dataset from ILO, it decreases to 119 countries for all three variables.
+
