@@ -1,3 +1,6 @@
+Question:  What explains geographic differences in AI adoption? 
+My intent is to find reasons as to why there are differences in adoption of Claude AI between countries. I will be doing this by utilizing datasets from ___ to look at ___.
+
 Source URL: https://huggingface.co/datasets/Anthropic/EconomicIndex
 
 Release: release\_2025\_09\_15
@@ -9,7 +12,6 @@ License: Data released under CC-BY, code released under MIT License.
 Citation:
 
 Author = Ruth Appel and Peter McCrory and Alex Tamkin and Michael Stern and Miles McCain and Tyler Neylon, title = Anthropic Economic Index Report: Uneven Geographic and Enterprise AI Adoption, date = 2025-09-15,   year = 2025, url = https://www.anthropic.com/research/anthropic-economic-index-september-2025-report
-
 
 
 
@@ -68,3 +70,15 @@ Raw Examples: Inspected the data using Excel. Specifically looking at Augmentati
 5. Morocco - Morocco only has a total of 4845 uses, much lower than the other countries looked at. The usage in this country tend to lean toward automation, not as heavily as Brazil, but a decent amount with a 57.30% automation usage and the augmentation percent comes to 42.70%. With a usage percent of 0.502 and per capita usage of 0.000192, the numbers check out as Morocco does have a smaller population. Their usage per capita index is only a 0.74, the smallest of any of the countries looked at but still within reason. 
 6. Not Classified - There is a large number of usage the falls under the geo_name "not_classified" meaning that they were not assigned a country. This only has usage count and usage percent, with a usage count of 150,999 and percent of 15.66. This is something odd to keep in mind, as it affects the percentages of usage count and usage percent.
 
+
+URL: https://data.worldbank.org/indicator/IT.NET.USER.ZS
+Download date: (today, 10/4/2026)
+License: CC BY 4.0
+Original source: ITU https://datahub.itu.int/
+Year used: 2024
+
+The next step taken was finding datasets to utilize alongside the anthropic data to identify reasons that Claude AI might differentiate between countries. The first dataset I am integrating is from World Bank Group Individuals using the Internet (% of population). It contains the ISO country codes that are also included in the data from Anthropic, so finding overlapping countries and combining them was not difficult. I then had to determine the appropriate year to use. 2025 contained the most recent data but only had entries for 42 of them. Moving back to 2024, there were 214 entries so I chose that instead to prioritize the amount of data over its recency. 
+
+1. 193 countries were found that matched between the Anthropic and World Bank datasets. 
+2. Out of the 193 countries, 166 of them have usable data. The other 27 matched but were missing values for 2024.
+3. The countries that were dropped are mostly smaller countries, islands, and microstates. Their absence should not affect the dataset too much, especially since there were some with no data from anthropic as well.
